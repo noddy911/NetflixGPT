@@ -1,8 +1,17 @@
 import React from "react";
 import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondContainer from "./SecondContainer";
 
 const Browser = () => {
-  return <div>browser</div>;
+  useNowPlayingMovies();
+  return (
+    <div>
+      <MainContainer />
+      <SecondContainer />
+    </div>
+  );
 };
 
 export default Browser;

@@ -14,7 +14,6 @@ const Header = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log("AUTH STATE:", user);
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
@@ -37,9 +36,13 @@ const Header = () => {
       });
   };
   return (
-    <div className="flex justify-between border-2 border-black bg-red-700">
+    <div className="flex justify-between  absolute w-screen z-50 bg-gradient-to-b from-black to-transparent">
       <div className="p-4 m-4 ">
-        <img src="" alt="NETFLIX" />
+        <img
+          className="text-white"
+          src="https://search.brave.com/images?q=netflix%20log%20png&source=imageCluster"
+          alt="NETFLIX"
+        />
       </div>
       <div>
         <button
